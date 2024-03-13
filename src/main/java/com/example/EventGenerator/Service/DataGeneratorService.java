@@ -29,7 +29,7 @@ public class DataGeneratorService {
     public String generateProductPurchasedEvent() {
         String userId = String.valueOf(faker.number().numberBetween(1, 10));
         String productId = String.valueOf(faker.number().numberBetween(1, 100));
-        double price = faker.number().randomDouble(2, 10, 500); // Assuming price range is 10 to 500
+        double price = faker.number().randomDouble(2, 10, 500);
         String formattedPrice = String.format(Locale.US, "%.2f", price); // Ensure dot as decimal separator
         String timestamp = Instant.now().toString();
         return String.format("{\"eventType\":\"ProductPurchased\",\"userId\":\"%s\",\"productId\":\"%s\",\"price\":%s,\"timestamp\":\"%s\"}", userId, productId, formattedPrice, timestamp);
